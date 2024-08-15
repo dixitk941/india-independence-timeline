@@ -15,25 +15,16 @@ function FreedomFighters() {
   ];
 
   return (
-    <div className="container mx-auto p-8 bg-white">
-      <h2 className="text-4xl font-bold text-center text-ashoka animate-fadeIn">Freedom Fighters</h2>
-      <div className="mt-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 animate-slideUp">
+    <div className="container mx-auto p-4">
+      <h1 className="text-3xl font-bold text-center mb-8">Freedom Fighters</h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {fighters.map((fighter, index) => (
-          <div
-            key={index}
-            className="p-6 bg-white border border-gray-300 rounded-lg shadow-lg transform transition duration-300 hover:scale-105 hover:bg-gradient-to-r hover:from-saffron hover:via-white hover:to-green relative group"
-          >
-            <h3 className="text-2xl font-extrabold text-ashoka group-hover:text-ashoka-dark">
-              {fighter.name}
-            </h3>
-            <p className="mt-2 text-gray-800 group-hover:text-ashoka-dark">
-              {fighter.description}
-            </p>
-            <img
-              src={fighter.image}
-              alt={fighter.name}
-              className="absolute inset-0 w-full h-full object-cover opacity-0 group-hover:opacity-50 transition duration-300 rounded-lg"
-            />
+          <div key={index} className="bg-white shadow-md rounded-lg overflow-hidden">
+            <img src={fighter.image} alt={fighter.name} className="w-full h-48 object-cover" />
+            <div className="p-4">
+              <h2 className="text-xl font-bold mb-2">{fighter.name}</h2>
+              <p className="text-gray-700">{fighter.description}</p>
+            </div>
           </div>
         ))}
       </div>
